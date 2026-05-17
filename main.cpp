@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "BigInteger.h"
 
 using namespace std;
 
@@ -121,6 +122,43 @@ vector<DigitToken> tokenize(const string& s) {
         }
     }
     return tokens;
+}
+
+enum class ParseState {
+    INTEGER,
+    FRACTION,
+    PERIOD
+};
+
+struct ParsedNumber {
+    vector<int> integerDigits;
+    vector<int> fractionalDigits;
+    vector<int> periodDigits;
+    bool hasFractionalPart;
+    bool hasPeriod;
+};
+
+ParsedNumber Parse(const vector<DigitToken>& tokens) {
+    ParseState state = ParseState::INTEGER;
+    ParsedNumber result;
+    for (int i = 0; i <= tokens.size() - 1; i++) {
+        DigitToken token = tokens[i];
+        if (token.type == TokenType::DIGIT) {
+            if (state == ParseState::INTEGER) {
+                result.integerDigits.push_back(token.value);
+            } else if (state == ParseState::FRACTION) {
+                result.fractionalDigits.push_back(token.value);
+            } else {
+                result.periodDigits.push_back(token.value);
+            }
+        } else if (token.type == TokenType::DOT) {
+            result.hasFractionalPart = true;
+            state = ParseState::FRACTION;
+        } else if (token.type == TokenType::OPEN_PERIOD_BRACKET) {
+            result.hasFractionalPart = true;
+            state = ParseState::PERIOD;
+        }
+    }
 }
 
 int main() {
