@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -14,8 +16,6 @@ struct DigitToken {
     int value;
     size_t position;
     string rawText;
-
-    int readBracketDigit
 };
 
 bool isDecimalDigit(char c) {
@@ -60,4 +60,81 @@ DigitToken readBracketDigit(const string& s, size_t& pos) {
     token.rawText = s.substr(start, pos - start);
 
     return token;
+}
+
+string tokenTypeToString(TokenType type) { // for debug
+    switch (type) {
+        case TokenType::DIGIT:
+            return "DIGIT";
+        case TokenType::DOT:
+            return "DOT";
+        case TokenType::OPEN_PERIOD_BRACKET:
+            return "OPEN_PERIOD_BRACKET";
+        case TokenType::CLOSE_PERIOD_BRACKET:
+            return "CLOSE_PERIOD_BRACKET";
+    }
+
+    return "UNKNOWN";
+}
+
+vector<DigitToken> tokenize(const string& s) {
+    vector<DigitToken> tokens;
+    size_t pos = 0;
+    while (pos < s.size()) {
+        char c = s[pos];
+        if (isDecimalDigit(c)) {
+            DigitToken token;
+            token.type = TokenType::DIGIT;
+            token.value = charDigitToValue(c);
+            token.position = pos;
+            token.rawText = string(1, c);
+            tokens.push_back(token);
+            pos++;
+        } else if (isLatinLetter(c)) {
+            DigitToken token;
+            token.type = TokenType::DIGIT;
+            token.value = letterToValue(c);
+            token.position = pos;
+            token.rawText = string(1, c);
+            tokens.push_back(token);
+            pos++;
+        } else if(c == '[') {
+            DigitToken token = readBracketDigit(s, pos);
+            tokens.push_back(token);
+        } else if (c == '.') {
+            DigitToken token;
+            token.type = TokenType::DOT;
+            pos++;
+            tokens.push_back(token);
+        } else if (c == '(') {
+            DigitToken token;
+            token.type = TokenType::OPEN_PERIOD_BRACKET;
+            token.position = pos;
+            pos++;
+            tokens.push_back(token);
+        } else if (c == ')') {
+            DigitToken token;
+            token.type = TokenType::CLOSE_PERIOD_BRACKET;
+            token.position = pos;
+            pos++;
+            tokens.push_back(token);
+        }
+    }
+    return tokens;
+}
+
+int main() {
+    string s;
+    cin >> s;
+
+    vector<DigitToken> tokens = tokenize(s);
+
+    for (DigitToken token : tokens) {
+        cout << "Type = " << tokenTypeToString(token.type)
+             << ", value = " << token.value
+             << ", position = " << token.position
+             << endl;
+    }
+
+    return 0;
 }
