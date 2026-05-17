@@ -13,7 +13,7 @@ private:
 
     void trim();
 
-    BigInteger multiply(const BigInteger& other) const;
+    BigInteger mulBig(const BigInteger& other) const;
     BigInteger sliceBlocks(std::size_t left, std::size_t right) const;
     BigInteger shiftBlocks(std::size_t blockCount) const;
 
@@ -51,5 +51,8 @@ public:
 
     int toInt() const;
 };
+
+BigInteger operator*(const BigInteger& a, int m);
+BigInteger operator*(int m, const BigInteger& a);
 
 BigInteger gcd(BigInteger a, BigInteger b);
