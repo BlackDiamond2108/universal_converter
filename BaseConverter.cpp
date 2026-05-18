@@ -1,4 +1,4 @@
-#include "BaseConverter.h"
+﻿#include "BaseConverter.h"
 
 #include <algorithm>
 #include <map>
@@ -8,30 +8,172 @@ using namespace std;
 
 namespace {
 
-struct ParsedInput {
-    vector<int> integerDigits;
-    vector<int> fractionalDigits;
-    vector<int> periodDigits;
+enum class TokenType {
+    DIGIT,
+    DOT,
+    OPEN_PERIOD_BRACKET,
+    CLOSE_PERIOD_BRACKET
+};
+
+struct DigitToken {
+    TokenType type;
+    int value;
+    size_t position;
+    string rawText;
 };
 
 bool isDecimalDigit(char c) {
-    return c >= '0' && c <= '9';
+    if (c >= '0' && c <= '9') {
+        return true;
+    }
+    return false;
 }
 
 bool isLatinLetter(char c) {
-    return ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z');
+    if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')) {
+        return true;
+    }
+    return false;
 }
 
-int digitValue(char c) {
-    if (isDecimalDigit(c)) {
-        return c - '0';
-    }
-
+int letterToValue(char c) {
     if ('a' <= c && c <= 'z') {
         c = c - 'a' + 'A';
     }
+    int value = c - 'A' + 10;
+    return value;
+}
 
-    return c - 'A' + 10;
+int charDigitToValue(char c) {
+    return (c - '0');
+}
+
+DigitToken readBracketDigit(const string& s, size_t& pos) {
+    size_t start = pos;
+    pos++;
+    int value = 0;
+    while(pos < s.size() && s[pos] != ']') {
+        value = value * 10 + (s[pos] - '0');
+        pos++;
+    }
+    pos++;
+    DigitToken token;
+    token.type = TokenType::DIGIT;
+    token.value = value;
+    token.position = start;
+    token.rawText = s.substr(start, pos - start);
+
+    return token;
+}
+
+string tokenTypeToString(TokenType type) { // for debug
+    switch (type) {
+        case TokenType::DIGIT:
+            return "DIGIT";
+        case TokenType::DOT:
+            return "DOT";
+        case TokenType::OPEN_PERIOD_BRACKET:
+            return "OPEN_PERIOD_BRACKET";
+        case TokenType::CLOSE_PERIOD_BRACKET:
+            return "CLOSE_PERIOD_BRACKET";
+    }
+
+    return "UNKNOWN";
+}
+
+vector<DigitToken> tokenize(const string& s) {
+    vector<DigitToken> tokens;
+    size_t pos = 0;
+    while (pos < s.size()) {
+        char c = s[pos];
+        if (isDecimalDigit(c)) {
+            DigitToken token;
+            token.type = TokenType::DIGIT;
+            token.value = charDigitToValue(c);
+            token.position = pos;
+            token.rawText = string(1, c);
+            tokens.push_back(token);
+            pos++;
+        } else if (isLatinLetter(c)) {
+            DigitToken token;
+            token.type = TokenType::DIGIT;
+            token.value = letterToValue(c);
+            token.position = pos;
+            token.rawText = string(1, c);
+            tokens.push_back(token);
+            pos++;
+        } else if(c == '[') {
+            DigitToken token = readBracketDigit(s, pos);
+            tokens.push_back(token);
+        } else if (c == '.') {
+            DigitToken token;
+            token.type = TokenType::DOT;
+            token.position = pos;
+            token.rawText = string(1, c);
+            pos++;
+            tokens.push_back(token);
+        } else if (c == '(') {
+            DigitToken token;
+            token.type = TokenType::OPEN_PERIOD_BRACKET;
+            token.position = pos;
+            token.rawText = string(1, c);
+            pos++;
+            tokens.push_back(token);
+        } else if (c == ')') {
+            DigitToken token;
+            token.type = TokenType::CLOSE_PERIOD_BRACKET;
+            token.position = pos;
+            token.rawText = string(1, c);
+            pos++;
+            tokens.push_back(token);
+        } else {
+            pos++;
+        }
+    }
+    return tokens;
+}
+
+enum class ParseState {
+    INTEGER,
+    FRACTION,
+    PERIOD
+};
+
+struct ParsedNumber {
+    vector<int> integerDigits;
+    vector<int> fractionalDigits;
+    vector<int> periodDigits;
+    bool hasFractionalPart;
+    bool hasPeriod;
+};
+
+ParsedNumber Parse(const vector<DigitToken>& tokens) {
+    ParseState state = ParseState::INTEGER;
+    ParsedNumber result;
+    result.hasFractionalPart = false;
+    result.hasPeriod = false;
+
+    for (size_t i = 0; i < tokens.size(); i++) {
+        DigitToken token = tokens[i];
+        if (token.type == TokenType::DIGIT) {
+            if (state == ParseState::INTEGER) {
+                result.integerDigits.push_back(token.value);
+            } else if (state == ParseState::FRACTION) {
+                result.fractionalDigits.push_back(token.value);
+            } else {
+                result.periodDigits.push_back(token.value);
+            }
+        } else if (token.type == TokenType::DOT) {
+            result.hasFractionalPart = true;
+            state = ParseState::FRACTION;
+        } else if (token.type == TokenType::OPEN_PERIOD_BRACKET) {
+            result.hasFractionalPart = true;
+            result.hasPeriod = true;
+            state = ParseState::PERIOD;
+        }
+    }
+
+    return result;
 }
 
 string digitToString(int digit) {
@@ -119,45 +261,7 @@ void appendFractionDigitsWithLimit(string& result, const vector<string>& digits,
     }
 }
 
-bool readBracketDigit(const string& input, size_t& pos, int base, int& value, string& error) {
-    size_t start = pos;
-    pos++;
-
-    if (pos >= input.size() || !isDecimalDigit(input[pos])) {
-        error = "Ошибка в позиции " + positionText(start) + ": пустая цифра в квадратных скобках";
-        return false;
-    }
-
-    long long current = 0;
-
-    while (pos < input.size() && input[pos] != ']') {
-        if (!isDecimalDigit(input[pos])) {
-            error = "Ошибка в позиции " + positionText(pos) + ": внутри квадратных скобок должны быть только цифры";
-            return false;
-        }
-
-        if (current <= 1000000) {
-            current = current * 10 + (input[pos] - '0');
-        }
-        pos++;
-    }
-
-    if (pos >= input.size()) {
-        error = "Ошибка в позиции " + positionText(start) + ": не закрыта квадратная скобка";
-        return false;
-    }
-
-    if (current >= base) {
-        error = "Ошибка в позиции " + positionText(start) + ": цифра не подходит для основания " + to_string(base);
-        return false;
-    }
-
-    value = (int)current;
-    pos++;
-    return true;
-}
-
-bool parseNumberText(const string& input, int base, ParsedInput& result, string& error) {
+bool validateInputText(const string& input, int base, string& error) {
     if (input.empty()) {
         error = "Ошибка: пустое число";
         return false;
@@ -167,9 +271,11 @@ bool parseNumberText(const string& input, int base, ParsedInput& result, string&
     bool inPeriod = false;
     bool hasPeriod = false;
     bool periodClosed = false;
+    bool hasIntegerDigit = false;
+    bool hasFractionalDigit = false;
+    bool hasPeriodDigit = false;
 
     size_t pos = 0;
-
     while (pos < input.size()) {
         if (periodClosed) {
             error = "Ошибка в позиции " + positionText(pos) + ": после периода не должно быть символов";
@@ -178,13 +284,70 @@ bool parseNumberText(const string& input, int base, ParsedInput& result, string&
 
         char c = input[pos];
 
-        if (c == '.') {
+        if (isDecimalDigit(c) || isLatinLetter(c)) {
+            int value = isDecimalDigit(c) ? charDigitToValue(c) : letterToValue(c);
+            if (value >= base) {
+                error = "Ошибка в позиции " + positionText(pos) + ": цифра не подходит для основания " + to_string(base);
+                return false;
+            }
+
+            if (!hasDot) {
+                hasIntegerDigit = true;
+            } else if (inPeriod) {
+                hasPeriodDigit = true;
+            } else {
+                hasFractionalDigit = true;
+            }
+
+            pos++;
+        } else if (c == '[') {
+            size_t start = pos;
+            pos++;
+
+            if (pos >= input.size() || !isDecimalDigit(input[pos])) {
+                error = "Ошибка в позиции " + positionText(start) + ": пустая цифра в квадратных скобках";
+                return false;
+            }
+
+            int value = 0;
+            while (pos < input.size() && input[pos] != ']') {
+                if (!isDecimalDigit(input[pos])) {
+                    error = "Ошибка в позиции " + positionText(pos) + ": внутри квадратных скобок должны быть только цифры";
+                    return false;
+                }
+
+                if (value <= 1000000) {
+                    value = value * 10 + charDigitToValue(input[pos]);
+                }
+                pos++;
+            }
+
+            if (pos >= input.size()) {
+                error = "Ошибка в позиции " + positionText(start) + ": не закрыта квадратная скобка";
+                return false;
+            }
+
+            if (value >= base) {
+                error = "Ошибка в позиции " + positionText(start) + ": цифра не подходит для основания " + to_string(base);
+                return false;
+            }
+
+            if (!hasDot) {
+                hasIntegerDigit = true;
+            } else if (inPeriod) {
+                hasPeriodDigit = true;
+            } else {
+                hasFractionalDigit = true;
+            }
+
+            pos++;
+        } else if (c == '.') {
             if (hasDot) {
                 error = "Ошибка в позиции " + positionText(pos) + ": лишняя точка";
                 return false;
             }
 
-            if (result.integerDigits.empty()) {
+            if (!hasIntegerDigit) {
                 error = "Ошибка в позиции " + positionText(pos) + ": перед точкой должна быть целая часть";
                 return false;
             }
@@ -211,7 +374,7 @@ bool parseNumberText(const string& input, int base, ParsedInput& result, string&
                 return false;
             }
 
-            if (result.periodDigits.empty()) {
+            if (!hasPeriodDigit) {
                 error = "Ошибка в позиции " + positionText(pos) + ": период не может быть пустым";
                 return false;
             }
@@ -220,37 +383,12 @@ bool parseNumberText(const string& input, int base, ParsedInput& result, string&
             periodClosed = true;
             pos++;
         } else {
-            int value = 0;
-
-            if (isDecimalDigit(c) || isLatinLetter(c)) {
-                value = digitValue(c);
-
-                if (value >= base) {
-                    error = "Ошибка в позиции " + positionText(pos) + ": цифра не подходит для основания " + to_string(base);
-                    return false;
-                }
-
-                pos++;
-            } else if (c == '[') {
-                if (!readBracketDigit(input, pos, base, value, error)) {
-                    return false;
-                }
-            } else {
-                error = "Ошибка в позиции " + positionText(pos) + ": недопустимый символ";
-                return false;
-            }
-
-            if (!hasDot) {
-                result.integerDigits.push_back(value);
-            } else if (inPeriod) {
-                result.periodDigits.push_back(value);
-            } else {
-                result.fractionalDigits.push_back(value);
-            }
+            error = "Ошибка в позиции " + positionText(pos) + ": недопустимый символ";
+            return false;
         }
     }
 
-    if (result.integerDigits.empty()) {
+    if (!hasIntegerDigit) {
         error = "Ошибка: отсутствует целая часть";
         return false;
     }
@@ -260,7 +398,7 @@ bool parseNumberText(const string& input, int base, ParsedInput& result, string&
         return false;
     }
 
-    if (hasDot && result.fractionalDigits.empty() && result.periodDigits.empty()) {
+    if (hasDot && !hasFractionalDigit && !hasPeriodDigit) {
         error = "Ошибка: после точки должна быть дробная часть или период";
         return false;
     }
@@ -285,7 +423,7 @@ bool BaseConverter::parseBase(const string& text, const string& name, int& base,
         }
 
         if (value <= 1000000) {
-            value = value * 10 + (c - '0');
+            value = value * 10 + charDigitToValue(c);
         }
     }
 
@@ -299,11 +437,12 @@ bool BaseConverter::parseBase(const string& text, const string& name, int& base,
 }
 
 BigFraction BaseConverter::parseInput(const string& input, int base, string& error) const {
-    ParsedInput parsed;
-
-    if (!parseNumberText(input, base, parsed, error)) {
+    if (!validateInputText(input, base, error)) {
         return BigFraction();
     }
+
+    vector<DigitToken> tokens = tokenize(input);
+    ParsedNumber parsed = Parse(tokens);
 
     BigInteger integerPart = digitsToBigInteger(parsed.integerDigits, base);
     BigInteger fractionalPart = digitsToBigInteger(parsed.fractionalDigits, base);
