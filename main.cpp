@@ -1,30 +1,12 @@
-#include <iostream>
-#include <string>
+﻿#include <QApplication>
 
-#include "BaseConverter.h"
+#include "mainwindow.h"
 
-using namespace std;
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
 
-int main() {
-    string p;
-    string q;
-    string input;
+    MainWindow window;
+    window.show();
 
-    cin >> p >> q >> input;
-
-    BaseConverter converter;
-    ConversionResult result = converter.convert(input, p, q);
-
-    if (!result.success) {
-        cout << result.message << endl;
-        return 0;
-    }
-
-    cout << result.output << endl;
-
-    if (!result.message.empty()) {
-        cout << result.message << endl;
-    }
-
-    return 0;
+    return app.exec();
 }

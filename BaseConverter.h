@@ -6,7 +6,7 @@
 #include "BigFraction.h"
 #include "BigInteger.h"
 
-const std::size_t MAX_OUTPUT_LENGTH = 100000;
+const std::size_t MAX_OUTPUT_LENGTH = 1000000;
 
 struct ConversionResult {
     bool success;

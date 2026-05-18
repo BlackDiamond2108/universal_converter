@@ -19,7 +19,6 @@ BigInteger::BigInteger(long long value) {
 BigInteger::BigInteger(const std::string& s) {
     for (int end = s.size(); end > 0; end -= BASE_DIGITS) {
         int start = max(0, end - BASE_DIGITS);
-        int length = end - start;
 
         int block = 0;
 
@@ -46,15 +45,18 @@ string BigInteger::toString() const {
     if (isZero()) {
         return "0";
     }
+
     string result = to_string(digits.back());
-    for (int i = digits.size() - 2; i >= 0; i--) {
+
+    for (int i = (int)digits.size() - 2; i >= 0; i--) {
         string block = to_string(digits[i]);
-    while(block.size() < BASE_DIGITS) {
-        block = "0" + block;
+        while(block.size() < BASE_DIGITS) {
+            block = "0" + block;
+        }
+
+        result += block;
     }
 
-    result += block;
-    }
     return result;
 }
 
@@ -65,7 +67,7 @@ int BigInteger::compare(const BigInteger& other) const {
     if (digits.size() > other.digits.size()) {
         return 1;
     }
-    for (int i = digits.size() - 1; i >= 0; i--) {
+    for (int i = (int)digits.size() - 1; i >= 0; i--) {
         if (digits[i] < other.digits[i]) {
             return -1;
         }
@@ -105,16 +107,16 @@ bool BigInteger::operator!=(const BigInteger& other) const {
 BigInteger BigInteger::operator+(const BigInteger& other) const {
     BigInteger result;
 
-    int n = max(digits.size(), other.digits.size());
+    int n = (int)max(digits.size(), other.digits.size());
     long long carry = 0;
 
     for (int i = 0; i < n; i++) {
         long long current = carry;
-        if (i < digits.size()) {
+        if (i < (int)digits.size()) {
             current += digits[i];
         }
 
-        if (i < other.digits.size()) {
+        if (i < (int)other.digits.size()) {
             current += other.digits[i];
         }
 
