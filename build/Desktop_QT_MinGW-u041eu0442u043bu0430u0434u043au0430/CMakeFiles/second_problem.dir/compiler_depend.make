@@ -1409,11 +1409,14 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/bits/allocator.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/atomic_base.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/basic_ios.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/basic_ios.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/basic_string.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/char_traits.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/charconv.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/chrono.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/codecvt.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/concept_check.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h \
@@ -1423,6 +1426,10 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/bits/exception.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/exception_defines.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/exception_ptr.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/fs_dir.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/fs_fwd.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/fs_ops.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/fs_path.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/functexcept.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/functional_hash.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
@@ -1430,9 +1437,15 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/invoke.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/ios_base.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/istream.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/list.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/locale_classes.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/locale_classes.tcc \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/locale_conv.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets.tcc \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/localefwd.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/memory_resource.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
@@ -1441,11 +1454,14 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/bits/nested_exception.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/new_allocator.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/node_handle.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/ostream.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/ostream.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/ostream_insert.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/parse_numbers.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/postypes.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/predefined_ops.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/ptr_traits.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/quoted_string.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/range_access.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/refwrap.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
@@ -1453,6 +1469,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/specfun.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/sstream.tcc \
   C:/msys64/mingw64/include/c++/15.2.0/bits/std_abs.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/std_function.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/stl_algo.h \
@@ -1498,6 +1515,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/climits \
   C:/msys64/mingw64/include/c++/15.2.0/clocale \
   C:/msys64/mingw64/include/c++/15.2.0/cmath \
+  C:/msys64/mingw64/include/c++/15.2.0/codecvt \
   C:/msys64/mingw64/include/c++/15.2.0/compare \
   C:/msys64/mingw64/include/c++/15.2.0/concepts \
   C:/msys64/mingw64/include/c++/15.2.0/cstddef \
@@ -1507,6 +1525,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/cstring \
   C:/msys64/mingw64/include/c++/15.2.0/ctime \
   C:/msys64/mingw64/include/c++/15.2.0/cwchar \
+  C:/msys64/mingw64/include/c++/15.2.0/cwctype \
   C:/msys64/mingw64/include/c++/15.2.0/debug/assertions.h \
   C:/msys64/mingw64/include/c++/15.2.0/debug/debug.h \
   C:/msys64/mingw64/include/c++/15.2.0/exception \
@@ -1517,17 +1536,23 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
   C:/msys64/mingw64/include/c++/15.2.0/ext/string_conversions.h \
   C:/msys64/mingw64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/mingw64/include/c++/15.2.0/filesystem \
   C:/msys64/mingw64/include/c++/15.2.0/functional \
   C:/msys64/mingw64/include/c++/15.2.0/initializer_list \
+  C:/msys64/mingw64/include/c++/15.2.0/iomanip \
+  C:/msys64/mingw64/include/c++/15.2.0/ios \
   C:/msys64/mingw64/include/c++/15.2.0/iosfwd \
+  C:/msys64/mingw64/include/c++/15.2.0/istream \
   C:/msys64/mingw64/include/c++/15.2.0/iterator \
   C:/msys64/mingw64/include/c++/15.2.0/limits \
   C:/msys64/mingw64/include/c++/15.2.0/list \
+  C:/msys64/mingw64/include/c++/15.2.0/locale \
   C:/msys64/mingw64/include/c++/15.2.0/map \
   C:/msys64/mingw64/include/c++/15.2.0/memory \
   C:/msys64/mingw64/include/c++/15.2.0/new \
   C:/msys64/mingw64/include/c++/15.2.0/numeric \
   C:/msys64/mingw64/include/c++/15.2.0/optional \
+  C:/msys64/mingw64/include/c++/15.2.0/ostream \
   C:/msys64/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
   C:/msys64/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
   C:/msys64/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
@@ -1535,6 +1560,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
   C:/msys64/mingw64/include/c++/15.2.0/ratio \
   C:/msys64/mingw64/include/c++/15.2.0/set \
+  C:/msys64/mingw64/include/c++/15.2.0/sstream \
   C:/msys64/mingw64/include/c++/15.2.0/stdexcept \
   C:/msys64/mingw64/include/c++/15.2.0/stdlib.h \
   C:/msys64/mingw64/include/c++/15.2.0/streambuf \
@@ -1567,10 +1593,14 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h \
   C:/msys64/mingw64/include/corecrt.h \
   C:/msys64/mingw64/include/corecrt_startup.h \
   C:/msys64/mingw64/include/corecrt_stdio_config.h \
@@ -1590,6 +1620,9 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/pthread_signal.h \
   C:/msys64/mingw64/include/pthread_time.h \
   C:/msys64/mingw64/include/pthread_unistd.h \
+  C:/msys64/mingw64/include/qt6/QtCore/QFile \
+  C:/msys64/mingw64/include/qt6/QtCore/QRegularExpression \
+  C:/msys64/mingw64/include/qt6/QtCore/QTextStream \
   C:/msys64/mingw64/include/qt6/QtCore/QVariant \
   C:/msys64/mingw64/include/qt6/QtCore/q17memory.h \
   C:/msys64/mingw64/include/qt6/QtCore/q20bit.h \
@@ -1617,6 +1650,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/qt6/QtCore/qbytearrayalgorithms.h \
   C:/msys64/mingw64/include/qt6/QtCore/qbytearraylist.h \
   C:/msys64/mingw64/include/qt6/QtCore/qbytearrayview.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qcalendar.h \
   C:/msys64/mingw64/include/qt6/QtCore/qchar.h \
   C:/msys64/mingw64/include/qt6/QtCore/qcheckedint_impl.h \
   C:/msys64/mingw64/include/qt6/QtCore/qcompare.h \
@@ -1634,11 +1668,17 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/qt6/QtCore/qcoreevent.h \
   C:/msys64/mingw64/include/qt6/QtCore/qdarwinhelpers.h \
   C:/msys64/mingw64/include/qt6/QtCore/qdatastream.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qdatetime.h \
   C:/msys64/mingw64/include/qt6/QtCore/qdeadlinetimer.h \
   C:/msys64/mingw64/include/qt6/QtCore/qdebug.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qdir.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qdirlisting.h \
   C:/msys64/mingw64/include/qt6/QtCore/qendian.h \
   C:/msys64/mingw64/include/qt6/QtCore/qeventloop.h \
   C:/msys64/mingw64/include/qt6/QtCore/qexceptionhandling.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qfile.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qfiledevice.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qfileinfo.h \
   C:/msys64/mingw64/include/qt6/QtCore/qflags.h \
   C:/msys64/mingw64/include/qt6/QtCore/qfloat16.h \
   C:/msys64/mingw64/include/qt6/QtCore/qforeach.h \
@@ -1714,6 +1754,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/qt6/QtCore/qtenvironmentvariables.h \
   C:/msys64/mingw64/include/qt6/QtCore/qtextstream.h \
   C:/msys64/mingw64/include/qt6/QtCore/qtformat_impl.h \
+  C:/msys64/mingw64/include/qt6/QtCore/qtimezone.h \
   C:/msys64/mingw64/include/qt6/QtCore/qtmetamacros.h \
   C:/msys64/mingw64/include/qt6/QtCore/qtnoop.h \
   C:/msys64/mingw64/include/qt6/QtCore/qtpreprocessorsupport.h \
@@ -1770,11 +1811,13 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
   C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/QApplication \
+  C:/msys64/mingw64/include/qt6/QtWidgets/QFileDialog \
   C:/msys64/mingw64/include/qt6/QtWidgets/QGroupBox \
   C:/msys64/mingw64/include/qt6/QtWidgets/QHBoxLayout \
   C:/msys64/mingw64/include/qt6/QtWidgets/QLabel \
   C:/msys64/mingw64/include/qt6/QtWidgets/QLineEdit \
   C:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
+  C:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox \
   C:/msys64/mingw64/include/qt6/QtWidgets/QPushButton \
   C:/msys64/mingw64/include/qt6/QtWidgets/QSpacerItem \
   C:/msys64/mingw64/include/qt6/QtWidgets/QSpinBox \
@@ -1786,6 +1829,9 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/qt6/QtWidgets/qabstractspinbox.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qapplication.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qboxlayout.h \
+  C:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \
+  C:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h \
+  C:/msys64/mingw64/include/qt6/QtWidgets/qfiledialog.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qframe.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qgridlayout.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qgroupbox.h \
@@ -1794,6 +1840,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/qt6/QtWidgets/qlayoutitem.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qlineedit.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h \
+  C:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qpushbutton.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h \
   C:/msys64/mingw64/include/qt6/QtWidgets/qspinbox.h \
@@ -1823,6 +1870,7 @@ CMakeFiles/second_problem.dir/mainwindow.cpp.obj: C:/Users/jitim/Documents/works
   C:/msys64/mingw64/include/time.h \
   C:/msys64/mingw64/include/vadefs.h \
   C:/msys64/mingw64/include/wchar.h \
+  C:/msys64/mingw64/include/wctype.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
@@ -2313,6 +2361,8 @@ C:/msys64/mingw64/include/qt6/QtCore/qstringtokenizer.h:
 
 C:/msys64/mingw64/include/qt6/QtCore/qtcoreexports.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/istream:
+
 C:/Program\ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake:
 
 C:/Program\ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake:
@@ -2398,6 +2448,8 @@ C:/Program\ Files/CMake/share/cmake-4.3/Modules/Internal/CheckCompilerFlag.cmake
 C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable_policy.h:
 
 second_problem_autogen/EWIEGA46WW/moc_mainwindow.cpp:
+
+C:/msys64/mingw64/include/qt6/QtCore/qdir.h:
 
 C:/Program\ Files/CMake/share/cmake-4.3/Modules/Internal/CheckFlagCommonConfig.cmake:
 
@@ -2501,6 +2553,10 @@ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_iterator.h:
 
 C:/msys64/mingw64/include/qt6/QtCore/qcontiguouscache.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/bits/quoted_string.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/basic_ios.h:
+
 CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 second_problem_autogen/moc_predefs.h:
@@ -2542,6 +2598,8 @@ C:/msys64/mingw64/include/sec_api/wchar_s.h:
 C:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake:
 
 C:/msys64/mingw64/include/c++/15.2.0/backward/binders.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/fs_ops.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bit:
 
@@ -2655,6 +2713,8 @@ C:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cm
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
+
 C:/msys64/mingw64/include/c++/15.2.0/bits/ios_base.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/locale_classes.h:
@@ -2729,6 +2789,8 @@ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_list.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/stl_map.h:
 
+C:/msys64/mingw64/include/qt6/QtCore/qdirlisting.h:
+
 C:/msys64/mingw64/include/c++/15.2.0/bits/stl_multimap.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/type_traits:
@@ -2785,6 +2847,8 @@ C:/msys64/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h:
 
 C:/msys64/mingw64/include/ctype.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/ios:
+
 C:/msys64/mingw64/include/qt6/QtCore/qstringbuilder.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/unique_ptr.h:
@@ -2800,6 +2864,8 @@ C:/msys64/mingw64/include/sys/types.h:
 C:/msys64/mingw64/include/qt6/QtCore/qutf8stringview.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/uses_allocator.h:
+
+C:/msys64/mingw64/include/qt6/QtCore/qfiledevice.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h:
 
@@ -3015,6 +3081,8 @@ C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/bits/ostream.h:
+
 C:/msys64/mingw64/include/qt6/QtCore/qnumeric.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h:
@@ -3022,6 +3090,8 @@ C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h:
 C:/msys64/mingw64/include/corecrt.h:
 
 C:/msys64/mingw64/include/qt6/QtWidgets/qtwidgets-config.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/iomanip:
 
 C:/msys64/mingw64/include/corecrt_wconio.h:
 
@@ -3249,6 +3319,8 @@ C:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake:
 
 C:/msys64/mingw64/include/qt6/QtCore/qvariant.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc:
+
 C:/msys64/mingw64/include/qt6/QtCore/qversiontagging.h:
 
 C:/msys64/mingw64/include/qt6/QtGui/qaction.h:
@@ -3337,6 +3409,8 @@ C:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake:
 
 C:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake:
 
+C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h:
+
 C:/msys64/mingw64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake:
 
 C:/msys64/mingw64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake:
@@ -3398,6 +3472,8 @@ C:/msys64/mingw64/include/qt6/QtWidgets/QLineEdit:
 C:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake:
 
 C:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/sstream.tcc:
 
 C:/msys64/mingw64/include/qt6/QtCore/qcoreevent.h:
 
@@ -3521,6 +3597,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h:
 
+C:/msys64/mingw64/include/qt6/QtCore/qfile.h:
+
 C:/msys64/mingw64/include/math.h:
 
 C:/msys64/mingw64/include/qt6/QtCore/qabstracteventdispatcher.h:
@@ -3539,13 +3617,71 @@ C:/msys64/mingw64/include/qt6/QtGui/qguiapplication_platform.h:
 
 C:/msys64/mingw64/include/qt6/QtGui/qinputmethod.h:
 
+C:/msys64/mingw64/include/c++/15.2.0/bits/basic_ios.tcc:
+
 C:/msys64/mingw64/include/qt6/QtWidgets/QApplication:
 
 C:/msys64/mingw64/include/qt6/QtWidgets/qapplication.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
 
+C:/msys64/mingw64/include/qt6/QtWidgets/QWidget:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/codecvt.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/fs_dir.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/fs_fwd.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/fs_path.h:
+
+C:/msys64/mingw64/include/qt6/QtCore/qtimezone.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/istream.tcc:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/locale_conv.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets.tcc:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/ostream.tcc:
+
+C:/msys64/mingw64/include/c++/15.2.0/codecvt:
+
+C:/msys64/mingw64/include/c++/15.2.0/cwctype:
+
+C:/msys64/mingw64/include/c++/15.2.0/filesystem:
+
+C:/msys64/mingw64/include/c++/15.2.0/locale:
+
+C:/msys64/mingw64/include/c++/15.2.0/ostream:
+
+C:/msys64/mingw64/include/qt6/QtWidgets/QLabel:
+
+C:/msys64/mingw64/include/c++/15.2.0/sstream:
+
+C:/msys64/mingw64/include/qt6/QtWidgets/qabstractscrollarea.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h:
+
+C:/msys64/mingw64/include/qt6/QtCore/QFile:
+
+C:/msys64/mingw64/include/qt6/QtCore/QRegularExpression:
+
+C:/msys64/mingw64/include/qt6/QtCore/QTextStream:
+
 C:/msys64/mingw64/include/qt6/QtCore/QVariant:
+
+C:/msys64/mingw64/include/qt6/QtCore/qcalendar.h:
+
+C:/msys64/mingw64/include/qt6/QtCore/qdatetime.h:
+
+C:/msys64/mingw64/include/qt6/QtCore/qfileinfo.h:
 
 C:/msys64/mingw64/include/qt6/QtCore/qiodevice.h:
 
@@ -3567,22 +3703,30 @@ C:/msys64/mingw64/include/qt6/QtGui/qtextformat.h:
 
 C:/msys64/mingw64/include/qt6/QtGui/qvalidator.h:
 
-C:/msys64/mingw64/include/qt6/QtWidgets/QLabel:
+C:/msys64/mingw64/include/qt6/QtWidgets/QFileDialog:
+
+C:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox:
 
 C:/msys64/mingw64/include/qt6/QtWidgets/QPushButton:
 
-C:/msys64/mingw64/include/qt6/QtWidgets/QWidget:
+C:/msys64/mingw64/include/qt6/QtWidgets/qfiledialog.h:
 
 C:/msys64/mingw64/include/qt6/QtWidgets/qabstractbutton.h:
 
-C:/msys64/mingw64/include/qt6/QtWidgets/qabstractscrollarea.h:
-
 C:/msys64/mingw64/include/qt6/QtWidgets/qabstractspinbox.h:
 
+C:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h:
+
+C:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h:
+
 C:/msys64/mingw64/include/qt6/QtWidgets/qlayout.h:
+
+C:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h:
 
 C:/msys64/mingw64/include/qt6/QtWidgets/qpushbutton.h:
 
 C:/msys64/mingw64/include/qt6/QtWidgets/qtextedit.h:
+
+C:/msys64/mingw64/include/wctype.h:
 
 C:/msys64/mingw64/include/qt6/QtCore/q20algorithm.h:

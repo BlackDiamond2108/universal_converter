@@ -164,6 +164,23 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="openButton">
+        <property name="text">
+         <string>Открыть</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Сохранить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="copyButton">
         <property name="enabled">
          <bool>false</bool>
@@ -226,3 +243,4 @@
  <resources/>
  <connections/>
 </ui>
+

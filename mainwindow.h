@@ -24,6 +24,8 @@ private:
     void connectActions();
     void convertNumber();
     void swapBases();
+    void openInputFile();
+    void saveOutputFile();
     void copyOutput();
     void setStatus(const QString& text, bool isError);
 };

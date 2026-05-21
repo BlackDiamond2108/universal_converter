@@ -44,6 +44,8 @@ public:
     QLineEdit *inputEdit;
     QHBoxLayout *buttonLayout;
     QPushButton *convertButton;
+    QPushButton *openButton;
+    QPushButton *saveButton;
     QPushButton *copyButton;
     QSpacerItem *buttonStretch;
     QGroupBox *outputGroup;
@@ -133,6 +135,17 @@ public:
 
         buttonLayout->addWidget(convertButton);
 
+        openButton = new QPushButton(centralwidget);
+        openButton->setObjectName("openButton");
+
+        buttonLayout->addWidget(openButton);
+
+        saveButton = new QPushButton(centralwidget);
+        saveButton->setObjectName("saveButton");
+        saveButton->setEnabled(false);
+
+        buttonLayout->addWidget(saveButton);
+
         copyButton = new QPushButton(centralwidget);
         copyButton->setObjectName("copyButton");
         copyButton->setEnabled(false);
@@ -189,6 +202,8 @@ public:
         inputLabel->setText(QCoreApplication::translate("MainWindow", "\320\247\320\270\321\201\320\273\320\276", nullptr));
         inputEdit->setPlaceholderText(QString());
         convertButton->setText(QCoreApplication::translate("MainWindow", "\320\232\320\276\320\275\320\262\320\265\321\200\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214", nullptr));
+        openButton->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214", nullptr));
+        saveButton->setText(QCoreApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
         copyButton->setText(QCoreApplication::translate("MainWindow", "\320\232\320\276\320\277\320\270\321\200\320\276\320\262\320\260\321\202\321\214", nullptr));
         outputGroup->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\267\321\203\320\273\321\214\321\202\320\260\321\202", nullptr));
         outputEdit->setPlaceholderText(QString());
